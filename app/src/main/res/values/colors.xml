@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="tealBlue">#034457</color>
+    <color name="progress_color_1">#117CB8</color>
+    <color name="progress_color_2">#37A4E2</color>
+    <color name="progress_color_3">#6CBDF0</color>
+    <color name="progress_color_4">#B2DAF0</color>
+    <color name="progress_color_5">#FEB23F</color>
+    <color name="progress_color_6">#FE9F45</color>
+    <color name="progress_color_7">#FE923F</color>
+    <color name="progress_color_8">#FE8D3C</color>
+    <color name="grey_244">#F1F4F6</color>
+    <color name="green_zero">#0018AB53</color>
+    <color name="green_thirty">#4D18AB53</color>
+    <color name="green_fifty">#5918AB53</color>
+    <color name="green_sixty">#8018AB53</color>
+    <color name="green_seventy">#B318AB53</color>
+    <color name="green_eighty">#CC18AB53</color>
+    <color name="green_ninety">#E618AB53</color>
+    <color name="green_100">#FF18AB53</color>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TimeWindowIndicator">
+        <attr name="trackSize" format="dimension" />
+        <attr name="thumbSize" format="dimension" />
+        <attr name="thumbColor" format="color" />
+        <attr name="editable" format="boolean" />
+        <attr name="trackColor" format="color"/>
+    </declare-styleable>
+</resources>
