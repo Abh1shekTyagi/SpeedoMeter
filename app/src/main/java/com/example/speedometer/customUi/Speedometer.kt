@@ -20,6 +20,7 @@ class Speedometer @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleRes: Int = 0
 ) : View(context, attrs, defStyleRes) {
+
     private val circlePaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private var arcWidth = context.resources.getDimension(R.dimen.dp_16)
     private val arcPaint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -56,20 +57,17 @@ class Speedometer @JvmOverloads constructor(
         radius = min(lowerCircleCenter.x, lowerCircleCenter.y) - 150f
 
         if (initialiseNobs) {
+            upperNobCenter = getNewCenter(radius, (170 * PI / 180).toFloat(), upperCircleCenter)
+            lowerNobCenter = getNewCenter(radius, (-170 * PI / 180).toFloat(), lowerCircleCenter)
 
-            upperNobCenter.x = upperCircleCenter.x - radius
-            upperNobCenter.y = 0f
-
-            lowerNobCenter.x = lowerCircleCenter.x - radius
-            lowerNobCenter.y = height.toFloat()
             initialiseNobs = false
         }
 
         canvas.drawCircle(lowerCircleCenter.x, lowerCircleCenter.y, radius, arcPaint)
         canvas.drawCircle(upperCircleCenter.x, upperCircleCenter.y, radius, arcPaint)
 
-        canvas.drawCircle(upperNobCenter.x, upperNobCenter.y, 40f, circlePaint)
-        canvas.drawCircle(lowerNobCenter.x, lowerNobCenter.y, 40f, circlePaint)
+        canvas.drawCircle(upperNobCenter.x, upperNobCenter.y, 50f, circlePaint)
+        canvas.drawCircle(lowerNobCenter.x, lowerNobCenter.y, 50f, circlePaint)
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
@@ -116,8 +114,7 @@ class Speedometer @JvmOverloads constructor(
         return true
     }
 
-    private fun getAngle(point: Point, center: Point) =
-        atan2((point.y - center.y), (point.x - center.x))
+    private fun getAngle(point: Point, center: Point) = atan2((point.y - center.y), (point.x - center.x))
 
     private fun isDraggable(event: MotionEvent, center: Point, radius: Float) =
         sqrt(
